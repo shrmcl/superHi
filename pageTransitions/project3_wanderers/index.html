@@ -1,3 +1,7 @@
+<!-- barba requires running from server: -->
+<!-- cd to this project; "python -m SimpleHTTPServer 8000"-->
+<!-- open on localhost:8000" (may need to open in incognito window)-->
+
 <!doctype html>
 <html>
   <head>
@@ -12,7 +16,8 @@
   <body> 
 
     <main data-barba="wrapper">
-      <article data-barba="container">
+      <!-- we create our own data-title to hold text that appears between slides -->
+      <article data-barba="container" data-title="Mauritius">
 
         <header>
           <img src="logo.svg" alt="Wanderers Logo">
