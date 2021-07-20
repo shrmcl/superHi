@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 // import the .svg as a component
 import { ReactComponent as LogoSVG } from './logo.svg'
+import { Marginals } from '../../styles'
 
 // adding style to the Logo component, via 'styled-components' module
 export const Logo = styled(LogoSVG)`
@@ -10,12 +11,7 @@ export const Logo = styled(LogoSVG)`
 `
 
 export const Header = styled.header`
-  box-sizing: border-box;
-  display: flex;
-  pointer-events: none;
-  position: fixed;
-  width: 100vw;
-  z-index: 1;
+  ${Marginals}
   justify-content: center;
   padding: 30px;
 `
