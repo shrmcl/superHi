@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './styles.css';
+import cabbage from './assets/image1.jpeg'
+import mango from './assets/image2.jpeg'
+import fig from './assets/image3.jpeg'
+import gaze from './assets/image4.jpeg'
+import peach from './assets/image5.jpeg'
+import avocado from './assets/image6.jpeg'
 
-function App() {
+const images = [cabbage, mango, fig, gaze, peach, avocado]
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="title">
+        <h1>Zesty</h1>
+        <h2>A photography project <br /> by Ella Fielding</h2>
+      </div>
+      <div className="image-container">
+        <img src={images[0]} alt="" />
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;
