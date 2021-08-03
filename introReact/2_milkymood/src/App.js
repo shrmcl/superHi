@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import { GlobalStyle, ImageContainer, Wrapper }  from './styles'
 import ImgBox from './components/ImgBox'
+import ModalComponent from './components/Modal'
+import { GlobalStyle, ImageContainer, Wrapper, Button }  from './styles'
 
-// prettier-ignore + ssh 
+// prettier-ignore 
 const matrix = [
   [0,0], [1,0], [2,0], [3,0],
   [0,1], [1,1], [2,1], [3,1],
@@ -17,6 +18,7 @@ const matrix = [
 const App = () => {
   // 1 is fully scattered img; 0 is the img unified
   const [distance, setDistance] = useState(1)
+  const [showModal, setShowModal] = useState(false)
   // suggested calculation for motion easing
   const easing = (num) => Math.pow(num, 3)
 
@@ -40,13 +42,19 @@ const App = () => {
     calculateDistance([touches[0].clientX, touches[0].clientY])
   }
 
+  const toggleModal = () => {
+    setShowModal((showModal) => !showModal)
+  }
+
   return (
     <>
       <GlobalStyle />
+      {showModal && <ModalComponent toggleModal={toggleModal} />}
       <Header />
       <Footer />
       <Wrapper onMouseMove={handleMove} onTouchMove={handleTouchMove} $color={Math.round(240 - distance * 40)}>
         <ImageContainer $isTogether={distance < 0.01}>
+          <Button onClick={toggleModal}>Sign up for updates</Button>
           {matrix.map(([x,y], index) => (
              <ImgBox key={index} x={x} y={y} percent={distance} />
           ))}
