@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import ImgBox from './components/ImgBox'
 import ModalComponent from './components/Modal'
+import ModalInner from './components/ModalInner'
 import { GlobalStyle, ImageContainer, Wrapper, Button }  from './styles'
 
 // prettier-ignore 
@@ -49,7 +50,11 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
-      {showModal && <ModalComponent toggleModal={toggleModal} />}
+      {showModal && (
+        <ModalComponent toggleModal={toggleModal}>
+          <ModalInner />
+        </ModalComponent>
+      )}
       <Header />
       <Footer />
       <Wrapper onMouseMove={handleMove} onTouchMove={handleTouchMove} $color={Math.round(240 - distance * 40)}>
