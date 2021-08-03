@@ -4,7 +4,7 @@ import Footer from './components/Footer'
 import { GlobalStyle, ImageContainer, Wrapper }  from './styles'
 import ImgBox from './components/ImgBox'
 
-// prettier-ignore
+// prettier-ignore + ssh testing
 const matrix = [
   [0,0], [1,0], [2,0], [3,0],
   [0,1], [1,1], [2,1], [3,1],
